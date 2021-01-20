@@ -55,3 +55,4 @@ function Sidebar() {
 }
 
 export default Sidebar;
+// done with sidebar and sidebarOptions
