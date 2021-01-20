@@ -21,8 +21,7 @@ function Header() {
         <input placeholder="Search Fabba Programmer" />
       </div>
       <div className="header__right">
-          <HelpOutline />
-
+        <HelpOutline />
       </div>
     </div>
   );
