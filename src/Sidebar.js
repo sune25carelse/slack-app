@@ -4,7 +4,7 @@ import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import CreateIcon from "@material-ui/icons/Create";
 import InsertCommentIcon from "@material-ui/icons/InsertComment";
 import SidebarOption from './SidebarOption';
-import { Apps, BookmarkBorder, Drafts, ExpandLess, FileCopy, Inbox, PeopleAlt } from '@material-ui/icons';
+import { Add, Apps, BookmarkBorder, Drafts, ExpandLess, ExpandMore, FileCopy, Inbox, PeopleAlt } from '@material-ui/icons';
 
 function Sidebar() {
   return (
@@ -27,6 +27,10 @@ function Sidebar() {
       <SidebarOption  Icon={Apps} title="Apps"/>
       <SidebarOption  Icon={FileCopy} title="File browser"/>
       <SidebarOption  Icon={ExpandLess} title="Show less"/>
+      <hr/>
+      <SidebarOption  Icon={ExpandMore} title="Channels"/>
+      <hr />
+      <SidebarOption  Icon={Add} addChannelOption title="Add Channel"/>
     </div>
   )
 }
