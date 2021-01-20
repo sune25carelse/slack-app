@@ -4,6 +4,7 @@ import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import CreateIcon from "@material-ui/icons/Create";
 import InsertCommentIcon from "@material-ui/icons/InsertComment";
 import SidebarOption from './SidebarOption';
+import { Apps, BookmarkBorder, Drafts, ExpandLess, FileCopy, Inbox, PeopleAlt } from '@material-ui/icons';
 
 function Sidebar() {
   return (
@@ -17,8 +18,15 @@ function Sidebar() {
         </h3>
        </div>
        <CreateIcon />
-       <SidebarOption  Icon={InsertCommentIcon} title="Threads"/>
       </div>
+      <SidebarOption  Icon={InsertCommentIcon} title="Threads"/>
+      <SidebarOption  Icon={Inbox} title="Mention & reactions"/>
+      <SidebarOption  Icon={Drafts} title="Saved items"/>
+      <SidebarOption  Icon={BookmarkBorder} title="Channel browser"/>
+      <SidebarOption  Icon={PeopleAlt} title="People & user groups"/>
+      <SidebarOption  Icon={Apps} title="Apps"/>
+      <SidebarOption  Icon={FileCopy} title="File browser"/>
+      <SidebarOption  Icon={ExpandLess} title="Show less"/>
     </div>
   )
 }
