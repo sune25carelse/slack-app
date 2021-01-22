@@ -4,15 +4,19 @@ import React from 'react';
 import './Header.css';
 import SearchIcon from "@material-ui/icons/Search";
 import { HelpOutline } from '@material-ui/icons';
+import { useStateValue } from './StateProvider';
 
 function Header() {
+
+  const [{ user }] = useStateValue();
+
   return (
     <div className="header">
       <div className="header__left">
         <Avatar
             className="header__avatar"
-            alt='Fabian Van Wyk'
-            src=''
+            alt={user?.displayName}
+            src={user?.photoURL}
         />
         <AccessTimeIcon />
       </div>

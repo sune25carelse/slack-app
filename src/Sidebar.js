@@ -6,9 +6,11 @@ import InsertCommentIcon from "@material-ui/icons/InsertComment";
 import SidebarOption from './SidebarOption';
 import { Add, Apps, BookmarkBorder, Drafts, ExpandLess, ExpandMore, FileCopy, Inbox, PeopleAlt } from '@material-ui/icons';
 import db from './firebase';
+import { useStateValue } from './StateProvider';
 
 function Sidebar() {
   const [channels, setChannels] = useState([]);
+  const [{ user }] = useStateValue();
 
   useEffect(() => {
     db.collection('rooms').onSnapshot((snapshot) => (
@@ -29,7 +31,7 @@ function Sidebar() {
         <h2>Van Wyk Devs</h2>
         <h3>
             <FiberManualRecordIcon />
-            Luca/Fabba
+            {user?.displayName}
         </h3>
        </div>
        <CreateIcon />
