@@ -26,7 +26,7 @@ function Sidebar() {
     <div className="sidebar">
      <div className="sidebar__header">
       <div className="sidebar__info">
-        <h2>Van Wyk Programmers</h2>
+        <h2>Van Wyk Devs</h2>
         <h3>
             <FiberManualRecordIcon />
             Luca/Fabba
