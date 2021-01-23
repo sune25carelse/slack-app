@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Chat.css';
 import { useParams } from "react-router-dom";
 import { InfoOutlined, StarBorderOutlined } from '@material-ui/icons';
@@ -14,8 +14,8 @@ function Chat() {
     useEffect(() => {
         if (roomId) {
             db.collection ('rooms')
-            .doc(roomId)
-            .onSnapshot((snapshot) => setRoomDetails(snapshot.data()))
+              .doc(roomId)
+              .onSnapshot((snapshot) => setRoomDetails(snapshot.data()))
         }
 
         db.collection('rooms')
@@ -25,7 +25,7 @@ function Chat() {
         .onSnapshot((snapshot) => 
             setRoomMessages(snapshot.docs.map((doc) => doc.data()))
         );
-    }, [roomId]);
+    }, [roomId])
 
     console.log(roomDetails);
     console.log('Messages >>> ', roomMessages);
@@ -35,7 +35,7 @@ function Chat() {
         <div className="chat__header">
             <div className="chat__headerLeft">
               <h4 className="chat__channelName">
-                  <strong>#{roomDetails?.name}</strong>
+                  <strong> #{roomDetails?.name} </strong>
                   <StarBorderOutlined />
               </h4>
             </div>
@@ -49,15 +49,15 @@ function Chat() {
         <div className="chat__messages">
             {roomMessages.map(({ message, user, userImage, timestamp }) => (
                 <Message
-                message={message}
-                timestamp={timestamp}
-                user={user}
-                userImage={userImage}
+                  message={message}
+                  timestamp={timestamp}
+                  user={user}
+                  userImage={userImage}
                 />
             ))}
         </div>
 
-        <ChatInput channelName={roomDetails?.name} channelId={""} />
+        <ChatInput channelName={roomDetails?.name} channelId={roomId} />
     </div>
   );
 }
